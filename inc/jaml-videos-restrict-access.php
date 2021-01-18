@@ -55,20 +55,23 @@ function jaml_form_videos_styles() { ?>
 add_shortcode('JAML_VIDEOS_RESTRICT', 'jaml_videos_restrict_function');
 function jaml_videos_restrict_function($attr) {
 
+
     $args = shortcode_atts( array(     
-		'image_logo' => 'http://17.0.0.2:8081/wp-content/uploads/2020/06/Objeto-Inteligente-de-Vetor-copiar-4.png',
+		'image_logo' => site_url() . '/wp-content/uploads/2020/06/Objeto-Inteligente-de-Vetor-copiar-4.png',
+        'form_title' => 'Faça seu Login',
         'form_url_login' => 'videos',
         'form_url_register' => 'register',
         'form_url_recover' => 'recover',
 	), $attr );
 
+    $form_title = $args['form_title'];
     $form_logo = $args['image_logo'];
     $form_url_login = site_url() . '/' . $args['form_url_login'];
     $form_url_register = site_url() . '/' . $args['form_url_register'];
     $form_url_recover = site_url() . '/' . $args['form_url_recover'];
 
     if(!isset($_SESSION['jaml_session_authorization'])) { 
-        return jaml_form_login($form_logo, $form_url_login, $form_url_register, $form_url_recover);
+        return jaml_form_login($form_title, $form_logo, $form_url_login, $form_url_register, $form_url_recover);
         exit;
     }
 

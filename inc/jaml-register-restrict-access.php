@@ -11,7 +11,7 @@ add_shortcode('JAML_FORM_REGISTER', 'jaml_form_register_function');
 function jaml_form_register_function($attr) {
 
     $args = shortcode_atts( array(     
-		'image_logo' => 'http://17.0.0.2:8081/wp-content/uploads/2020/06/Objeto-Inteligente-de-Vetor-copiar-4.png',
+		'image_logo' => site_url() . '/wp-content/uploads/2020/06/Objeto-Inteligente-de-Vetor-copiar-4.png',
 	), $attr );
 
     $html = '';

@@ -94,7 +94,7 @@ function jaml_session_exit() {
 /**
  * HTML FORM LOGIN
  */
-function jaml_form_login($form_logo, $form_url_login, $form_url_register, $form_url_recover) {
+function jaml_form_login($form_title, $form_logo, $form_url_login, $form_url_register, $form_url_recover) {
 
     $html = '';
 
@@ -102,7 +102,7 @@ function jaml_form_login($form_logo, $form_url_login, $form_url_register, $form_
     $html .= '<form id="JamlFormLogin" class="jaml-restricted-form" style="width: min(400px, 100%)">';
     $html .= '<div class="jaml-form-login-header d-flex flex-column align-items-center">';
     $html .= '<img class="img-fluid mb-3" src="' . $form_logo . '" alt="Logo" style="width: 120px" />';
-    $html .= '<h2 class="mb-4 text-center">Faça seu Login</h2>';
+    $html .= '<h2 class="mb-4 text-center">' . $form_title . '</h2>';
     $html .= '</div>';
     $html .= '<div class="form-row">';
     $html .= '<div class="form-group col-md-12">';
